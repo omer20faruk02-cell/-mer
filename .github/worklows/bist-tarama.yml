@@ -1,0 +1,34 @@
+name: BIST Tarama Botu
+
+on:
+  schedule:
+    # 15:35 UTC = 18:35 Türkiye saati (piyasa 18:00-18:10 arası kapanıyor)
+    - cron: '35 15 * * 1-5'
+  workflow_dispatch:   # GitHub sayfasından "Run workflow" ile elle de tetikleyebilirsin
+
+permissions:
+  contents: write   # gh-pages branch'ine yayın yapabilmek için gerekli
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Gereksinimleri kur
+        run: pip install -r requirements.txt
+
+      - name: Tarama botunu çalıştır
+        run: python bist_tarama_bot.py
+
+      - name: Siteyi GitHub Pages'e yayınla
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
