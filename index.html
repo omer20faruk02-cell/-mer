@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BİST Tarama Botu</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; background:#0f1115; color:#e8e8ea; margin:0; padding:16px; }
+  h1 { font-size:1.3rem; margin-bottom:2px; }
+  .updated { color:#9a9aa5; font-size:0.85rem; margin-bottom:18px; }
+  .criteria { color:#9a9aa5; font-size:0.8rem; margin-bottom:20px; }
+  .cards { display:flex; flex-direction:column; gap:14px; margin-bottom:24px; }
+  .card { background:#1b1e26; border-radius:12px; padding:14px 16px; border:1px solid #2a2e38; }
+  .card.top { border-color:#3d8bfd; }
+  .card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .ticker { font-size:1.15rem; font-weight:700; }
+  .score { background:#3d8bfd22; color:#3d8bfd; padding:3px 10px; border-radius:20px; font-weight:600; font-size:0.9rem; }
+  .row { display:flex; justify-content:space-between; font-size:0.9rem; padding:3px 0; color:#c8c8d0; }
+  .sl { color:#ff6b6b; }
+  .tp { color:#51cf66; }
+  .notes { margin:8px 0 0; padding-left:18px; font-size:0.8rem; color:#9a9aa5; }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid #2a2e38; }
+  th { color:#9a9aa5; font-weight:500; }
+  .disclaimer { margin-top:24px; font-size:0.78rem; color:#7a7a85; line-height:1.4; }
+  .empty { color:#9a9aa5; }
+  h2 { font-size:1rem; color:#c8c8d0; margin-top:0; }
+</style>
+</head>
+<body>
+  <h1>📊 BİST Tarama Botu</h1>
+  <div class="updated">Son güncelleme: 14.09.2026 04:21</div>
+  <div class="criteria">Kriter: göreceli hacim &gt;3.0, hacim &gt;50,000,000 TL,
+    değişim &gt;%5.0 — 4 hisse eşleşti</div>
+
+  
+
+  <h2>🏆 En yüksek puanlı ilk 3 hisse</h2>
+  <div class="cards">
+        <div class="card top">
+          <div class="card-head">
+            <span class="ticker">EGEEN</span>
+            <span class="score">55/100</span>
+          </div>
+          <div class="row"><span>Kapanış</span><b>6027.50 TL</b></div>
+          <div class="row"><span>Değişim</span><b>%9.99</b></div>
+          <div class="row"><span>Göreceli Hacim</span><b>3.02x</b></div>
+          <div class="row"><span>Stop-Loss</span><b class="sl">4730.46 TL</b></div>
+          <div class="row"><span>Take-Profit</span><b class="tp">6009.30 TL</b></div>
+          <div class="row"><span>Risk/Ödül</span><b>1:-0.01</b></div>
+          <ul class="notes"><li>RSI 67.9 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
+        </div>
+        <div class="card top">
+          <div class="card-head">
+            <span class="ticker">TTKOM</span>
+            <span class="score">55/100</span>
+          </div>
+          <div class="row"><span>Kapanış</span><b>60.85 TL</b></div>
+          <div class="row"><span>Değişim</span><b>%9.94</b></div>
+          <div class="row"><span>Göreceli Hacim</span><b>3.82x</b></div>
+          <div class="row"><span>Stop-Loss</span><b class="sl">48.97 TL</b></div>
+          <div class="row"><span>Take-Profit</span><b class="tp">60.24 TL</b></div>
+          <div class="row"><span>Risk/Ödül</span><b>1:-0.05</b></div>
+          <ul class="notes"><li>RSI 68.4 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
+        </div>
+        <div class="card top">
+          <div class="card-head">
+            <span class="ticker">KONYA</span>
+            <span class="score">55/100</span>
+          </div>
+          <div class="row"><span>Kapanış</span><b>4260.00 TL</b></div>
+          <div class="row"><span>Değişim</span><b>%6.50</b></div>
+          <div class="row"><span>Göreceli Hacim</span><b>3.24x</b></div>
+          <div class="row"><span>Stop-Loss</span><b class="sl">3575.55 TL</b></div>
+          <div class="row"><span>Take-Profit</span><b class="tp">4279.27 TL</b></div>
+          <div class="row"><span>Risk/Ödül</span><b>1:0.03</b></div>
+          <ul class="notes"><li>RSI 62.7 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
+        </div></div>
+
+  <h2>Diğer eşleşenler</h2><table><tr><th>Hisse</th><th>Puan</th><th>Değişim</th><th>Gör. Hacim</th><th>Ciro</th></tr><tr><td>VAKBN</td><td>38</td><td>%9.99</td><td>4.11x</td><td>9,841,626,819 TL</td></tr></table>
+
+  <div class="disclaimer">⚠️ Bu sayfadaki puanlar, stop-loss ve take-profit seviyeleri
+  kesin kazanç garantisi değildir. RSI/MACD/destek-direnç'i kurallara göre
+  birleştiren otomatik bir özet aracıdır, yatırım tavsiyesi değildir.
+  Son kararı ve risk yönetimini sen almalısın.</div>
+</body>
+</html>
