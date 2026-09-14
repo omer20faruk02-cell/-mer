@@ -78,7 +78,7 @@ REL_VOLUME_LOOKBACK = 20    # ortalama hacim için kaç günlük geçmiş kullan
 HISTORY_PERIOD = "6mo"      # indikatörler için ne kadar geçmiş veri çekilsin
 
 MIN_EXPECTED_RISE_PCT = 5.0   # yarın için beklenen minimum yükseliş (%) — bunun altındakiler elenir
-SUPPORT_PROXIMITY_PCT = 3.0   # fiyat desteğe bu yüzde kadar yakınsa "desteğe yakın" sayılır
+SUPPORT_PROXIMITY_PCT = 5.0   # fiyat desteğe bu yüzde kadar yakınsa "desteğe yakın" sayılır
 BOUNCE_LOOKBACK = 5            # "destekten tepki" ararken kaç günlük pencereye bakılsın
 
 TOP_N = 3                   # sitede kaç hisse öne çıksın
