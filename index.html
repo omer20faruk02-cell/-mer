@@ -12,10 +12,13 @@
   .cards { display:flex; flex-direction:column; gap:14px; margin-bottom:24px; }
   .card { background:#1b1e26; border-radius:12px; padding:14px 16px; border:1px solid #2a2e38; }
   .card.top { border-color:#3d8bfd; }
-  .card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .card-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:2px; }
   .ticker { font-size:1.15rem; font-weight:700; }
-  .score { background:#3d8bfd22; color:#3d8bfd; padding:3px 10px; border-radius:20px; font-weight:600; font-size:0.9rem; }
+  .badge { background:#51cf6622; color:#51cf66; padding:2px 8px; border-radius:20px; font-weight:700; font-size:0.75rem; }
+  .score { background:#3d8bfd22; color:#3d8bfd; padding:3px 10px; border-radius:20px; font-weight:600; font-size:0.9rem; margin-left:auto; }
+  .setup { font-size:0.78rem; color:#51cf66; margin-bottom:8px; }
   .row { display:flex; justify-content:space-between; font-size:0.9rem; padding:3px 0; color:#c8c8d0; }
+  .row.highlight { background:#51cf6614; border-radius:6px; padding:4px 6px; margin:4px 0; }
   .sl { color:#ff6b6b; }
   .tp { color:#51cf66; }
   .notes { margin:8px 0 0; padding-left:18px; font-size:0.8rem; color:#9a9aa5; }
@@ -28,60 +31,22 @@
 </style>
 </head>
 <body>
-  <h1>📊 BİST Tarama Botu</h1>
-  <div class="updated">Son güncelleme: 14.09.2026 04:21</div>
-  <div class="criteria">Kriter: göreceli hacim &gt;3.0, hacim &gt;50,000,000 TL,
-    değişim &gt;%5.0 — 4 hisse eşleşti</div>
+  <h1>📊 BİST Tarama Botu — Sadece AL Fikirleri</h1>
+  <div class="updated">Son güncelleme: 14.09.2026 09:36</div>
+  <div class="criteria">Tarama: göreceli hacim &gt;3.0, hacim &gt;50,000,000 TL,
+    bugünkü değişim &gt;%5.0 · AL şartı: beklenen yükseliş &gt;=%5.0
+    ve desteğe yakın/destekten tepki — 0 hisse eşleşti</div>
+
+  <p class='empty'>Bugün kriterlere uyan AL fikri bulunamadı (en az %5 beklenen yükseliş + desteğe yakın/destekten tepki şartı).</p>
+
+  <h2>🏆 En yüksek potansiyelli ilk 3 hisse</h2>
+  <div class="cards"></div>
 
   
 
-  <h2>🏆 En yüksek puanlı ilk 3 hisse</h2>
-  <div class="cards">
-        <div class="card top">
-          <div class="card-head">
-            <span class="ticker">EGEEN</span>
-            <span class="score">55/100</span>
-          </div>
-          <div class="row"><span>Kapanış</span><b>6027.50 TL</b></div>
-          <div class="row"><span>Değişim</span><b>%9.99</b></div>
-          <div class="row"><span>Göreceli Hacim</span><b>3.02x</b></div>
-          <div class="row"><span>Stop-Loss</span><b class="sl">4730.46 TL</b></div>
-          <div class="row"><span>Take-Profit</span><b class="tp">6009.30 TL</b></div>
-          <div class="row"><span>Risk/Ödül</span><b>1:-0.01</b></div>
-          <ul class="notes"><li>RSI 67.9 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
-        </div>
-        <div class="card top">
-          <div class="card-head">
-            <span class="ticker">TTKOM</span>
-            <span class="score">55/100</span>
-          </div>
-          <div class="row"><span>Kapanış</span><b>60.85 TL</b></div>
-          <div class="row"><span>Değişim</span><b>%9.94</b></div>
-          <div class="row"><span>Göreceli Hacim</span><b>3.82x</b></div>
-          <div class="row"><span>Stop-Loss</span><b class="sl">48.97 TL</b></div>
-          <div class="row"><span>Take-Profit</span><b class="tp">60.24 TL</b></div>
-          <div class="row"><span>Risk/Ödül</span><b>1:-0.05</b></div>
-          <ul class="notes"><li>RSI 68.4 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
-        </div>
-        <div class="card top">
-          <div class="card-head">
-            <span class="ticker">KONYA</span>
-            <span class="score">55/100</span>
-          </div>
-          <div class="row"><span>Kapanış</span><b>4260.00 TL</b></div>
-          <div class="row"><span>Değişim</span><b>%6.50</b></div>
-          <div class="row"><span>Göreceli Hacim</span><b>3.24x</b></div>
-          <div class="row"><span>Stop-Loss</span><b class="sl">3575.55 TL</b></div>
-          <div class="row"><span>Take-Profit</span><b class="tp">4279.27 TL</b></div>
-          <div class="row"><span>Risk/Ödül</span><b>1:0.03</b></div>
-          <ul class="notes"><li>RSI 62.7 — güçlü ama aşırı alım değil</li><li>MACD sinyal üstünde ve momentum artıyor (pozitif)</li><li>Fiyat direnç bölgesine çok yakın</li></ul>
-        </div></div>
-
-  <h2>Diğer eşleşenler</h2><table><tr><th>Hisse</th><th>Puan</th><th>Değişim</th><th>Gör. Hacim</th><th>Ciro</th></tr><tr><td>VAKBN</td><td>38</td><td>%9.99</td><td>4.11x</td><td>9,841,626,819 TL</td></tr></table>
-
-  <div class="disclaimer">⚠️ Bu sayfadaki puanlar, stop-loss ve take-profit seviyeleri
-  kesin kazanç garantisi değildir. RSI/MACD/destek-direnç'i kurallara göre
-  birleştiren otomatik bir özet aracıdır, yatırım tavsiyesi değildir.
-  Son kararı ve risk yönetimini sen almalısın.</div>
+  <div class="disclaimer">⚠️ Bu sayfa SADECE alım (AL) fikirleri üretir, hiçbir zaman satış
+  sinyali göstermez. Beklenen yükseliş, destek-direnç mesafesi ile RSI/MACD momentum
+  gücünün birleştirilmesiyle üretilen bir TAHMİNDİR, kesin kazanç garantisi değildir.
+  Son kararı ve risk yönetimini sen almalısın. Yatırım tavsiyesi değildir.</div>
 </body>
 </html>
